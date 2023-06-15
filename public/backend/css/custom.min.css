@@ -11,3 +11,9 @@
 #slash{
 	display: none;
 }
+
+span.text-alert {
+    color: red;
+    font-size: 17px;
+    font-weight: bold;
+}

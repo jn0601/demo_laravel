@@ -30,16 +30,27 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
-              <h1>Login Form</h1>
+            <form action="{{URL::to('/admin-trang-chu')}}" method="post">
+                <!-- tạo token để chống sql injection -->
+                {{ csrf_field() }} 
+              <h1>TRANG ĐĂNG NHẬP</h1>
+              <?php
+
+use Illuminate\Support\Facades\Session;
+
+ $message = Session::get('message');
+ if ($message) {
+    echo '<span class="text-alert">' .$message . '</span>';
+    Session::put('message', null); // nếu tồn tại $message thì echo 1 lần duy nhất
+ } ?>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" name="admin_email" placeholder="Điền Email" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" name="admin_password" placeholder="Điền Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="{{URL::to('/trang-chu-admin')}}">Log in</a>
+                <button class="btn btn-default submit" type="submit">ĐĂNG NHẬP</button>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 

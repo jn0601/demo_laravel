@@ -1,5 +1,5 @@
 @extends('admin_layout')
-@section('content')
+@section('admin_content')
 
 <div class="right_col" role="main">
           <!-- top tiles -->
