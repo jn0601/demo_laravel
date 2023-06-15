@@ -22,7 +22,7 @@ Route::get('/trang-chu', [HomeController::class, 'index']);
 
 //Backend
 Route::get('/admin', [AdminController::class, 'index']); // vào func index của AdminController
-Route::get('/trang-chu-admin', [AdminController::class, 'index']);
+Route::get('/trang-chu-admin', [AdminController::class, 'show_dashboard']);
 Route::get('/login-auth', [LoginController::class, 'index']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/admin-trang-chu', [LoginController::class, 'login']);

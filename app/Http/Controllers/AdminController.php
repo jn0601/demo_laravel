@@ -3,10 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-    public function index() {
+    public function AuthLogin()
+    {
+        // kiểm tra admin id 
+        $admin_id = Auth::id();
+        // tồn tại thì redirect tới trang chủ, không thì phải login
+        if ($admin_id) {
+            return Redirect::to('trang-chu-admin');
+        } else {
+            return Redirect::to('admin_pages.login.login')->send();
+        }
+    }
+
+    public function index()
+    {
+        return view('admin_pages.admin_home'); // gọi admin_home.blade trong folder admin_pages
+    }
+
+    public function show_dashboard() {
+        // $this->AuthLogin();
         return view('admin_pages.admin_home'); // gọi admin_home.blade trong folder admin_pages
     }
 }
