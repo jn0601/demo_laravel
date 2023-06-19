@@ -68,6 +68,7 @@ Hướng dẫn setup Laravel
 
 Cài đặt: Git bash, composer
 Update composer (Trường hợp muốn update các vendors cần thiết): Mở Git bash ở folder project, lệnh: composer update
+
 Cài đặt package cần thiết cho composer: composer require paypal/rest-api-sdk-php
 "paypal/rest-api-sdk-php" là tên package
 
