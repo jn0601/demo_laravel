@@ -71,7 +71,7 @@ Update composer (Trường hợp muốn update các vendors cần thiết): Mở
 
 Cài đặt package cần thiết cho composer: composer require paypal/rest-api-sdk-php
 "paypal/rest-api-sdk-php" là tên package
-
+----------------------------------------------------------
 1. Trường hợp tạo mới hoàn toàn:
 
 Tạo project laravel bằng composer: mở git bash ở folder muốn tạo project, nhập lệnh:
