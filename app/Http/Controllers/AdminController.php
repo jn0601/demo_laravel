@@ -15,19 +15,27 @@ class AdminController extends Controller
         $admin_id = Auth::id();
         // tồn tại thì redirect tới trang chủ, không thì phải login
         if ($admin_id) {
+            //echo $admin_id . "<br>";
             return Redirect::to('trang-chu-admin');
         } else {
-            return Redirect::to('admin_pages.login.login')->send();
+            return Redirect::to('404')->send();
         }
     }
 
     public function index()
     {
+        $this->AuthLogin();
         return view('admin_pages.admin_home'); // gọi admin_home.blade trong folder admin_pages
     }
 
-    public function show_dashboard() {
-        // $this->AuthLogin();
+    public function show_dashboard()
+    {
+        $this->AuthLogin();
         return view('admin_pages.admin_home'); // gọi admin_home.blade trong folder admin_pages
+    }
+
+    public function error()
+    {
+        return view('admin_pages.error.404');
     }
 }

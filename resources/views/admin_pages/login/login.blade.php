@@ -9,6 +9,7 @@
 
     <title>Gentelella Alela! | </title>
 
+    
     <!-- Bootstrap -->
     <link href="{{asset('public/backend/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -20,6 +21,8 @@
 
     <!-- Custom Theme Style -->
     <link href="{{asset('public/backend/css/custom.min.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
   </head>
 
   <body class="login">
@@ -27,27 +30,46 @@
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
 
-      <div class="login_wrapper">
-        <div class="animate form login_form">
-          <section class="login_content">
-            <form action="{{URL::to('/admin-trang-chu')}}" method="post">
-                <!-- tạo token để chống sql injection -->
-                {{ csrf_field() }} 
-              <h1>TRANG ĐĂNG NHẬP</h1>
-              <?php
+                    <!-- <?php
 
 use Illuminate\Support\Facades\Session;
 
- $message = Session::get('message');
- if ($message) {
-    echo '<span class="text-alert">' .$message . '</span>';
-    Session::put('message', null); // nếu tồn tại $message thì echo 1 lần duy nhất
- } ?>
+$message = Session::get('message');
+if ($message) {
+   echo '<span class="text-alert">' .$message . '</span>';
+   Session::put('message', null); // nếu tồn tại $message thì echo 1 lần duy nhất
+} ?> -->
+<!-- @php
+$message = Session::get('message');
+if($message){
+echo '<span class="text-alert">'.$message.'</span>';
+Session::put('message',null);
+}
+@endphp -->
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form action="{{URL::to('/login')}}" method="post">
+                <!-- tạo token để chống sql injection -->
+                {{ csrf_field() }} 
+              <h1>TRANG ĐĂNG NHẬP</h1>
+
+
+<!-- @if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif -->
               <div>
                 <input type="text" class="form-control" name="admin_email" placeholder="Điền Email" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" name="admin_password" placeholder="Điền Password" required="" />
+                <input type="password" class="form-control" name="password" placeholder="Điền Password" required="" />
               </div>
               <div>
                 <button class="btn btn-default submit" type="submit">ĐĂNG NHẬP</button>
@@ -110,5 +132,29 @@ use Illuminate\Support\Facades\Session;
         </div>
       </div>
     </div>
+    
+
+  <!-- @if (Session::has('message')) {
+    $message = Session::get('message');
+    if ($message == "Đăng nhập thành công") {
+    <script>
+      toastr.success('Đăng nhập thành công', 'Thành công');
+    </script>
+    } else if ($message == "Mật khẩu không đúng, vui lòng thử lại"){
+      <script>
+      toastr.success('Mật khẩu không đúng, vui lòng thử lại', 'Thất bại');
+      </script>
+    }
+    else {
+      <script>
+      toastr.success('Đăng xuất thành công', 'Thành công');
+      </script>
+    }
+  }
+
+  @endif -->
+  <script src="{{asset('public/backend/vendors/jquery/dist/jquery.min.js')}}"></script>
+  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+  {!! Toastr::message() !!}
   </body>
 </html>
