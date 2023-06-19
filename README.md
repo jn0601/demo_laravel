@@ -70,12 +70,14 @@ Cài đặt: Git bash, composer
 Update composer (Trường hợp muốn update các vendors cần thiết): Mở Git bash ở folder project, lệnh: composer update
 
 Cài đặt package cần thiết cho composer: composer require paypal/rest-api-sdk-php
+
 Ở đây "paypal/rest-api-sdk-php" là tên package
 
 1. Trường hợp tạo mới hoàn toàn:
 
 Tạo project laravel bằng composer: mở git bash ở folder muốn tạo project, nhập lệnh:
 composer create-project --prefer-dist laravel/laravel projectlaravel
+
 Ở đây "projectlaravel" chính là tên project muốn tạo.
 
 Để mở project ở trình duyệt mà không cần vào /public:
@@ -91,12 +93,15 @@ Quản lý đường dẫn ở routes/web.php
 Các câu lệnh thường dùng trong laravel: mở git bash ở folder project laravel.
 
 Tạo Model: php artisan make:model Admin
+
 Ở đây "Admin" chính là tên model muốn tạo.
 
 Tạo controller: php artisan make:controller AdminController
+
 Ở đây "AdminController" chính là tên controller muốn tạo.
 
 Tạo file migration để tạo table trong database: php artisan make:migration create_tbl_admin_table --create=tbl_admin
+
 Ở đây "create_tbl_admin_table" là tên của migration, "--create=tbl_admin" để tự động tạo 2 public function up và down, function up chứa các attribute của table cần tạo, function down để drop table if exists.
 
 Thực thi câu lệnh migration để tạo các table theo các file migration: php artisan migrate
@@ -107,11 +112,17 @@ Thực thi câu lệnh migration để tạo các table theo các file migration
 "APP_URL=http://localhost" là domain của project.
 
 "DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
+
 DB_DATABASE=testlaravel
+
 DB_USERNAME=root
+
 DB_PASSWORD=''"
+
 Là thông tin kết nối của database.
 
 Tiếp theo, vào config/database.php: ở mục 'connections' chỉnh host và database tương ứng.
