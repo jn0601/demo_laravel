@@ -129,3 +129,7 @@ Là thông tin kết nối của database.
 
 Tiếp theo, vào config/database.php: ở mục 'connections' chỉnh host và database tương ứng.
 
+Config/app.php: 'url' => env('APP_URL', 'http://localhost')
+
+Chuyển 'http://localhost' sang domain tương ứng.
+
