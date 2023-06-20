@@ -67,6 +67,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Hướng dẫn setup Laravel
 
 Cài đặt: Git bash, composer
+
 Update composer (Trường hợp muốn update các vendors cần thiết): Mở Git bash ở folder project, lệnh: composer update
 
 Cài đặt package cần thiết cho composer: composer require paypal/rest-api-sdk-php
@@ -76,6 +77,7 @@ Cài đặt package cần thiết cho composer: composer require paypal/rest-api
 1. Trường hợp tạo mới hoàn toàn:
 
 Tạo project laravel bằng composer: mở git bash ở folder muốn tạo project, nhập lệnh:
+
 composer create-project --prefer-dist laravel/laravel projectlaravel
 
 Ở đây "projectlaravel" chính là tên project muốn tạo.

@@ -15,7 +15,6 @@ class AdminController extends Controller
         $admin_id = Auth::id();
         // tồn tại thì redirect tới trang chủ, không thì phải login
         if ($admin_id) {
-            //echo $admin_id . "<br>";
             return Redirect::to('trang-chu-admin');
         } else {
             return Redirect::to('404')->send();
