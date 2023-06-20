@@ -29,11 +29,9 @@ Route::get('/', [HomeController::class, 'index']); // vào func index của Home
 Route::get('/trang-chu', [HomeController::class, 'index']);
 
 
-
-
-
 //Backend
-
+// ->middleware('auth') để bảo mật đường dẫn
+// ->name('login') để redirect về trang login
 //Auth::routes();
 Route::get('/admin', [AdminController::class, 'index'])->middleware('auth'); // vào func index của AdminController
 Route::get('/trang-chu-admin', [AdminController::class, 'show_dashboard'])->middleware('auth');
