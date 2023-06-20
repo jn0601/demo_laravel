@@ -9,27 +9,27 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-    public function AuthLogin()
-    {
-        // kiểm tra admin id 
-        $admin_id = Auth::id();
-        // tồn tại thì redirect tới trang chủ, không thì phải login
-        if ($admin_id) {
-            return Redirect::to('trang-chu-admin');
-        } else {
-            return Redirect::to('404')->send();
-        }
-    }
+    // public function AuthLogin()
+    // {
+    //     // kiểm tra admin id 
+    //     $admin_id = Auth::id();
+    //     // tồn tại thì redirect tới trang chủ, không thì phải login
+    //     if ($admin_id) {
+    //         return Redirect::to('trang-chu-admin');
+    //     } else {
+    //         return Redirect::to('404')->send();
+    //     }
+    // }
 
     public function index()
     {
-        $this->AuthLogin();
+        //$this->AuthLogin();
         return view('admin_pages.admin_home'); // gọi admin_home.blade trong folder admin_pages
     }
 
     public function show_dashboard()
     {
-        $this->AuthLogin();
+        //$this->AuthLogin();
         return view('admin_pages.admin_home'); // gọi admin_home.blade trong folder admin_pages
     }
 

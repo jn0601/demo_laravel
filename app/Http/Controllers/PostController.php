@@ -8,23 +8,23 @@ use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
-    public function AuthLogin()
-    {
-        // kiểm tra admin id 
-        $admin_id = Auth::id();
-        // tồn tại thì redirect tới trang chủ, không thì phải login
-        if ($admin_id) {
-            return Redirect::to('trang-chu-admin');
-        } else {
-            return Redirect::to('404')->send();
-        }
-    }
+    // public function AuthLogin()
+    // {
+    //     // kiểm tra admin id 
+    //     $admin_id = Auth::id();
+    //     // tồn tại thì redirect tới trang chủ, không thì phải login
+    //     if ($admin_id) {
+    //         return Redirect::to('trang-chu-admin');
+    //     } else {
+    //         return Redirect::to('404')->send();
+    //     }
+    // }
     public function add_post(){
-        $this->AuthLogin();
+        //$this->AuthLogin();
         return view('admin_pages.post.add_post');
     }
     public function list_post(){
-        $this->AuthLogin();
+        //$this->AuthLogin();
         return view('admin_pages.post.list_post');
     }
 }
